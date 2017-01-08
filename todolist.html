@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<link rel="stylesheet" href="todolist.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="todolist.js"></script>
+
+<body>
+    <div ng-app="todoListModule" ng-controller="myController">
+        <p>{{avalibleItemsNumber}} left to do</p>
+        <ul class="todoList">
+            <li ng-repeat="item in list">
+                <input type="checkbox" ng-model="item.isFinished" />
+                <span ng-class="item.isFinished?'finishedItem':''" ng-click="item.isFinished=!item.isFinished">
+                    {{ item.name }}
+                </span>
+                <span class="deleteBtn" ng-click="delToDoItem($index)">x</span>
+            </li>
+        </ul>
+        <input type="text" name="todoItem" ng-model="newItemName">
+        <button ng-click="addToDoItem()">Add</button>
+    </div>
+</body>
+</html>

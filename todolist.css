@@ -1,0 +1,15 @@
+ul.todoList {
+    width: 200px;
+}
+
+span {
+    cursor: pointer;
+}
+
+span.finishedItem {
+    text-decoration: line-through;
+}
+
+span.deleteBtn {
+    float: right;
+}
